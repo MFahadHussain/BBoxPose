@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBox Mask Pose | AI Vision</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1 class="gradient-text">BBox Mask Pose</h1>
+            <p class="subtitle">Advanced Person Tracking & Pose Estimation</p>
+        </header>
+
+        <section class="glass-card upload-section" id="upload-card">
+            <div class="drop-zone" id="drop-zone">
+                <div class="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </div>
+                <h3>Drag & Drop Video</h3>
+                <p>or click to browse (.mp4, .avi, .mov)</p>
+                <input type="file" id="file-input" hidden accept="video/*">
+            </div>
+
+            <div id="file-info" class="hidden">
+                <div class="file-details">
+                    <span id="filename">video.mp4</span>
+                    <button class="btn btn-secondary" id="process-btn">Start Processing</button>
+                    <button class="btn btn-icon" id="clear-btn">✕</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card dashboard hidden" id="dashboard">
+            <div class="status-header">
+                <div class="status-indicator">
+                    <span class="pulse"></span>
+                    <span id="status-text">Initializing...</span>
+                </div>
+                <div class="percentage" id="percent-text">0%</div>
+            </div>
+
+            <div class="live-feed-wrapper">
+                <img id="live-feed" src="" alt="Live Processing Feed" class="hidden">
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <label>Frame</label>
+                    <span id="frame-count">0 / 0</span>
+                </div>
+                <div class="stat-item">
+                    <label>Accuracy</label>
+                    <span id="accuracy-stat">92.8%</span>
+                </div>
+                <div class="stat-item">
+                    <label>FPS</label>
+                    <span id="fps-stat">11.4</span>
+                </div>
+            </div>
+
+            <div class="log-container" id="logs">
+                <div class="log-entry">Waiting for pipeline...</div>
+            </div>
+        </section>
+
+        <section class="results-grid hidden" id="results">
+            <div class="glass-card result-card">
+                <h3>Original Video</h3>
+                <video id="input-video" controls></video>
+            </div>
+            <div class="glass-card result-card">
+                <h3>Processed Result</h3>
+                <video id="output-video" controls></video>
+                <div class="actions">
+                    <a id="download-video" class="btn btn-primary" download>Download Video</a>
+                    <a id="download-json" class="btn btn-secondary" download>Download JSON</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

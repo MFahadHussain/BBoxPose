@@ -1,0 +1,9 @@
+.venv/
+checkpoints/
+data/
+outputs/
+__pycache__/
+*.mp4
+*.pt
+*.weights
+*.onnx

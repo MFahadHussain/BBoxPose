@@ -1,0 +1,30 @@
+# VRG Prague BBoxMaskPose Requirements
+# Install: pip install -r requirements.txt
+
+# Core
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+
+# OpenMMLab (VRG models)
+mmengine>=0.10.0
+mmcv>=2.1.0
+mmdet>=3.3.0
+mmpose>=1.3.0
+
+# Web UI
+fastapi
+uvicorn
+python-multipart
+websockets
+
+# Segmentation
+segment-anything>=1.0
+
+# Utilities
+tqdm>=4.65.0
+loguru>=0.7.0
+pillow>=10.0.0
+huggingface-hub>=0.16.0
+setuptools
